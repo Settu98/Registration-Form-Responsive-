@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Responsive Form design</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    * {
+      margin: 0%;
+      padding: 0%;
+      box-sizing: border-box;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #71b7e6, #9b59b6)
+    }
+
+    .container {
+      max-width: 700px;
+      width: 100%;
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 5px;
+    }
+
+    .container .title {
+      font-size: 25px;
+      font-weight: 450;
+
+    }
+
+    .container form .user-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px 0px 12px 0px;
+    }
+
+    form .user-details .input-box {
+      margin-bottom: 15px;
+      width: calc(100% / 2 - 20px);
+    }
+
+    .user-details .input-box .details {
+      display: block;
+      font-weight: 450px;
+      margin-bottom: 5px;
+    }
+
+    .user-details .input-box input {
+      height: 45px;
+      width: 100%;
+      outline: none;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      padding-left: 15px;
+      font-size: 15px;
+      border-bottom-width: 3px;
+      transition: all 0.3s ease;
+    }
+
+    .user-details .input-box input:focus,
+    .user-details .input-box input:valid {
+      border-color: #9b59b6;
+    }
+
+    form .gender-details .gender-title {
+      font-size: 20px;
+      font-weight: 450;
+    }
+
+    form .gender-details .category {
+      display: flex;
+      width: 80%;
+      justify-content: space-between;
+      margin: 14px 0;
+
+    }
+
+    .gender-details .category label {
+      display: flex;
+      align-items: center;
+    }
+
+    .gender-details .category label .dot {
+      height: 18px;
+      width: 18px;
+      background: #d9d9d9;
+      border-radius: 50%;
+      margin-right: 10px;
+      border: 5px solid transparent
+    }
+
+    #dot-1:checked~.category .one,
+    #dot-2:checked~.category .two {
+      border-color: #d9d9d9;
+      background-color: #9b59b6;
+    }
+
+    form input[type="radio"] {
+      display: none;
+    }
+
+    form .button {
+      height: 45px;
+      margin: 45px 0;
+    }
+
+    form .button button {
+      height: 100%;
+      width: 100%;
+      outline: none;
+      color: #fff;
+      background: linear-gradient(135deg, #71b7e6, #9b59b6);
+      border: none;
+      font-size: 18px;
+      font-weight: 450;
+      letter-spacing: 1px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+   <div class="title"> Registration Form</div>
+     <form action="#" id="myForm">
+       <div class="user-details">
+       <div class="input-box">
+          <span class="details">Full Name</span>
+         <input type="text" id="name" placeholder="Enter your name" required>
+          </div>
+     <div class="input-box">
+         <span class="details">User Name</span>
+         <input type="text" id="username" placeholder="Enter your Username" required>
+         </div>
+       <div class="input-box">
+         <span class="details">Email</span>
+         <input type="text" id="email" placeholder="Enter your Email" required>
+            </div>
+         <div class="input-box">
+           <span class="details">Phone Number</span>
+           <input type="text" id="phonenumber" placeholder="Enter your Phone number" required>
+          </div>
+         <div class="input-box">
+           <span class="details">Password</span>
+         <input type="text" id="password" placeholder="Enter your password" required>
+           </div>
+         <div class="input-box">
+           <span class="details">Confirm Password</span>
+          <input type="text" id="confirmpassword" placeholder="Confirm password" required>
+        </div>
+      </div>
+      <div class="gender-details">
+        <input type="radio" name="gender" id="dot-1">
+        <input type="radio" name="gender" id="dot-2">
+        <div class="gender-title">Gender</div>
+        <div class="category">
+          <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+        </div>
+        <div class="category">
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+        </div>
+      </div>
+      <div class="button">
+        <button type="button" onclick="submitForm()">Submit</button>
+      </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
